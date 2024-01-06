@@ -63,36 +63,36 @@ import { FontAwesome } from '@expo/vector-icons';
 //     )
 // }
 
-import { useState, useEffect } from 'react';
-import {data} from '../../Utils/Data';
+// import { useState, useEffect } from 'react';
+// import {data} from '../../Utils/Data';
 
-const placeItem = () => {
+// const placeItem = () => {
 
-    const [card , setcard] = useState([])
-     useEffect (()=>{
-         setcard(data)
-     },[])
+//     const [card , setcard] = useState([])
+//      useEffect (()=>{
+//          setcard(data)
+//      },[])
 
-    return (
-        <View>
-            {
-                card?.map((item) => (
-                    <View style={style.container}>
-                        <Text>{item.name}</Text>
-                        <Text>{item.address}</Text>
-                        <Text>{item.city}</Text>
-                        <Text>{item.type}</Text>
-                    </View>
-                ))
-            }
-        </View>
-    )
-}
+//     return (
+//         <View>
+//             {
+//                 card?.map((item) => (
+//                     <View style={style.container}>
+//                         <Text>{item.name}</Text>
+//                         <Text>{item.address}</Text>
+//                         <Text>{item.city}</Text>
+//                         <Text>{item.type}</Text>
+//                     </View>
+//                 ))
+//             }
+//         </View>
+//     )
+// }
 
-const style = StyleSheet.create ({
-    container: {
-       paddingLeft: 
-    }
+// const style = StyleSheet.create ({
+//     container: {
+//        paddingLeft: 
+//     }
 })
 
 
