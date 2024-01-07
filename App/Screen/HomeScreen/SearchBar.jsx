@@ -12,7 +12,7 @@ export default function SearchBar({searchedLocation}) {
         marginTop:'15',
         paddingHorizontal:5,
         backgroundColor:Colors.WHITE,
-        borderRadius:6
+        borderRadius:6 
     }}>
         <Ionicons name="location-sharp" size={24} color={Colors.GRAY} style={{paddingTop:10}}/>
       <GooglePlacesAutocomplete
@@ -23,7 +23,7 @@ export default function SearchBar({searchedLocation}) {
         searchedLocation(details?.geometry?.location)
       }}
       query={{
-        key: 'AIzaSyBcPyOcoQOOuTI9fX6b-MBIGqalCjK3ViM',
+        key: 'IhAbPAMX0AvGX1rQQZhcj8wa0SzvCW4a"',
         language: 'en',
       }}
     />

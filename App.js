@@ -84,9 +84,7 @@ export default function App() {
     
           <SignedIn>
               <NavigationContainer>
-                <PlaceItem/>
                  <TabNavigation/>
-
               </NavigationContainer>
           </SignedIn>
 

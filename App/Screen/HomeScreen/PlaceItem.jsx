@@ -63,38 +63,53 @@ import { FontAwesome } from '@expo/vector-icons';
 //     )
 // }
 
-// import { useState, useEffect } from 'react';
-// import {data} from '../../Utils/Data';
+import { useState, useEffect } from 'react';
+import {data} from '../../Utils/Data';
 
-// const placeItem = () => {
+const PlaceItem = () => {
 
-//     const [card , setcard] = useState([])
-//      useEffect (()=>{
-//          setcard(data)
-//      },[])
+    const [placeList, setplaceList] = useState([])
+     useEffect (()=>{
+         setplaceList(data)
+     },[])
 
-//     return (
-//         <View>
-//             {
-//                 card?.map((item) => (
-//                     <View style={style.container}>
-//                         <Text>{item.name}</Text>
-//                         <Text>{item.address}</Text>
-//                         <Text>{item.city}</Text>
-//                         <Text>{item.type}</Text>
-//                     </View>
-//                 ))
-//             }
-//         </View>
-//     )
-// }
+    return (
 
-// const style = StyleSheet.create ({
-//     container: {
-//        paddingLeft: 
-//     }
-})
+        <View>
+            {
+                placeList?.map((item,index) => (
+                    <View key={index} style={{
+                        backgroundColor: Colors.WHITE,
+                        margin: 5,
+                        borderRadius: 10,
+                        width: Dimensions.get('screen').width*0.9
+                    }}>
 
+                        <View style={{ padding: 15 }}>
+                            <Text style={{
+                                fontSize: 23,
+                                fontFamily: 'outfit-medium'
+                            }}>{item.name}</Text>
 
+                            <Text style={{
+                                color: Colors.GRAY,
+                                fontFamily: 'outfit'
+                            }}>{item.address}</Text>
 
-export default placeItem;
+                            <Text>{item.city}</Text>
+                        </View>
+                      
+
+                        <View>
+                        <Text style={{marginTop:1, padding: 15}}>{item.type} Connectors</Text>
+                        </View>
+                      
+                    </View>
+                ))
+            }
+        </View>
+       
+    )
+}
+
+export default PlaceItem;

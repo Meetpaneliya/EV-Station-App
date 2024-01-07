@@ -11,7 +11,7 @@ import { SelectMarkercontext } from '../../Context/SelectMarkerContex';
 export default function HomeScreen() {
 
   const {location , setlocation} = useContext(UserLocationContext);
-  const [placeList ,setPlaceList] = useState([]);
+  const [placeList ,setplaceList] = useState([]);
   const [selectedMarker, setSelectedMarker] = useState([]);
 
   useEffect(()=>{
@@ -34,7 +34,7 @@ export default function HomeScreen() {
   }
     GlobalApi.NearByPlace(data).then(resp=>{
       console.log(JSON.stringify(resp.data));
-      setPlaceList(resp.data?.places);
+      setplaceList(resp.data?.places);
       
     })
   }

@@ -3,8 +3,10 @@ import React, {useEffect,useRef} from 'react'
 import PlaceItem from './PlaceItem';
 import { SelectMarkercontext } from '../../Context/SelectMarkerContex';
 import { useContext } from 'react';
+import { data } from '../../Utils/Data';
+export default function PlaceListView() {
 
-export default function PlaceListView({placeList}) {
+ // console.log("****",data)
   const flatListRef = useRef(null);
 
   // const {selectedMarker, setSelectedMarker} = useContext(SelectMarkercontext)
@@ -15,42 +17,26 @@ export default function PlaceListView({placeList}) {
     // const scrollToIndex=(index)=>{
     //     flatListRef.current?.scrollToIndex({animated:true,index})
     // }
-    const getItemLayout=(_,index)=>({
-      length: Dimensions.get('window').width,
-      offset: Dimensions.get('window').width * index, 
-      index
-    })
+    // const getItemLayout=(_,index)=>({
+    //   length: Dimensions.get('window').width,
+    //   offset: Dimensions.get('window').width * index, 
+    //   index
+    // })
   return (
     <View>
       <FlatList 
-      data={placeList}
+      data={data}
       horizontal={true}
       pagingEnabled
        ref={flatListRef}
-       getItemLayout={getItemLayout}
+      //  getItemLayout={getItemLayout}
       showsHorizontalScrollIndicator={false}
       renderItem={({item,index})=>(
-        <Veiw key={index}>
+        <View key={index}>
             <PlaceItem place={item} />
-        </Veiw>
+        </View>
       )}/>
     </View>
   )
 }
 
-// import { View, Text, FlatList } from 'react-native'
-// import React from 'react'
-
-// export default function PlaceListView({PlaceList}) {
-//   return (
-//     <View>
-//       <FlatList
-//       data={PlaceList}
-//       renderItem={({item,index})=>(
-//         <View>
-//           <Text>{item.displayName.Text}</Text>
-//         </View>
-//       )}/>
-//     </View>
-//   )
-// }
